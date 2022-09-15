@@ -2,8 +2,10 @@ import random
 
 z = int(input("How many dice do you have? "))
 if z > 1:
+    x = []
     for i in range(z):
-        x = int(input("What is the max of this dice? "))
+        a = int(input("What is the max of this dice? "))
+        x.append(a)
 elif z == 1:
     x = int(input("What's the max on your dice? "))
 y = 1
@@ -22,8 +24,8 @@ if z == 1:
 elif z > 1:
     while answer == "y":
         die = []
-        for i in range(z):
-            roll = random.randint(y, x)
+        for i in x:
+            roll = random.randint(y, i)
             die.append(roll)
         print("The numbers are: ", die)
         answer = input("Do you want to roll again? y or n: ")
